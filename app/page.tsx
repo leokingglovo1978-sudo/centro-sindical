@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [file, setFile] = useState<File | null>(null);
@@ -29,7 +30,18 @@ export default function Home() {
 
   return (
     <main style={{ maxWidth: 520, margin: "4rem auto", padding: "0 1rem" }}>
-      <h1>Centro Sindical — Subir exportación</h1>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem" }}>
+        <h1 style={{ margin: 0 }}>Centro Sindical — Subir exportación</h1>
+        <Link
+          href="/mensajes"
+          style={{
+            background: "#2563eb", color: "white", textDecoration: "none",
+            padding: "0.5rem 0.9rem", borderRadius: 6, fontSize: "0.85rem", whiteSpace: "nowrap",
+          }}
+        >
+          📋 Ver mensajes →
+        </Link>
+      </div>
       <p style={{ color: "#94a3b8" }}>
         Exporta el chat en WhatsApp (Exportar chat → Sin archivos) y sube aquí el .txt
       </p>
